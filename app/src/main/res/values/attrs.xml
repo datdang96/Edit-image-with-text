@@ -1,0 +1,199 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <declare-styleable name="HorizontalScrollMenuView">
+        <attr name="icon_width" format="dimension" />
+        <attr name="icon_height" format="dimension" />
+        <attr name="backgroundMenuColor" format="color" />
+        <attr name="backgroundNotifications" format="color" />
+        <attr name="item_textColor" format="color" />
+        <attr name="item_backgroundColor" format="color" />
+        <attr name="item_marginTop" format="dimension" />
+        <attr name="item_marginBottom" format="dimension" />
+        <attr name="item_marginLeft" format="dimension" />
+        <attr name="item_marginRight" format="dimension" />
+        <attr name="item_colorSelected" format="color" />
+        <attr name="item_textSize" format="dimension" />
+        <attr name="itemSize">
+            <enum name="Mini" value="1" />
+            <enum name="Normal" value="0" />
+        </attr>
+    </declare-styleable>
+    <declare-styleable name="StickerView">
+        <attr name="showIcons" format="boolean" />
+        <attr name="showBorder" format="boolean" />
+        <attr name="bringToFrontCurrentSticker" format="boolean" />
+        <attr name="borderColor" format="color" />
+        <attr name="borderAlpha" format="integer" />
+    </declare-styleable>
+    <declare-styleable name="AvatarView">
+        <attr name="showLabel" format="boolean" />
+        <attr name="avatarSize" format="dimension" />
+        <attr name="avatarSrc" format="reference" />
+        <attr name="labelSrc" format="reference" />
+    </declare-styleable>
+
+    <declare-styleable name="TriangleLabelView">
+
+        <attr name="backgroundColor" format="color" />
+        <attr name="primaryTextColor" format="color" />
+        <attr name="secondaryTextColor" format="color" />
+
+        <attr name="primaryText" format="string" />
+        <attr name="secondaryText" format="string" />
+
+        <attr name="primaryTextSize" format="dimension" />
+        <attr name="secondaryTextSize" format="dimension" />
+
+        <attr name="labelTopPadding" format="dimension" />
+        <attr name="labelCenterPadding" format="dimension" />
+        <attr name="labelBottomPadding" format="dimension" />
+
+        <attr name="primaryTextStyle">
+            <enum name="normal" value="0" />
+            <enum name="italic" value="1" />
+            <enum name="bold" value="2" />
+        </attr>
+
+        <attr name="secondaryTextStyle">
+            <enum name="normal" value="0" />
+            <enum name="italic" value="1" />
+            <enum name="bold" value="2" />
+        </attr>
+
+        <attr name="corner">
+            <enum name="leftTop" value="1" />
+            <enum name="rightTop" value="2" />
+            <enum name="leftBottom" value="3" />
+            <enum name="rightBottom" value="4" />
+        </attr>
+
+    </declare-styleable>
+
+    <declare-styleable name="ColorSeekBar">
+        <attr name="colorSeeds" format="reference" />
+        <attr name="barHeight" format="dimension" />
+        <attr name="thumbHeight" format="dimension" />
+        <attr name="showAlphaBar" format="boolean" />
+        <attr name="showColorBar" format="boolean" />
+        <attr name="alphaBarPosition" format="integer" />
+        <attr name="colorBarPosition" format="integer" />
+        <attr name="bgColor" format="color" />
+        <attr name="barRadius" format="dimension" />
+        <attr name="barMargin" format="dimension" />
+        <attr name="maxPosition" format="integer" />
+        <attr name="isVertical" format="boolean" />
+        <attr name="disabledColor" format="color" />
+        <attr name="showThumb" format="boolean" />
+        <attr name="cornerRadius" format="dimension" />
+
+        <attr name="thumbBorder" format="dimension" />
+        <attr name="thumbBorderColor" format="color" />
+    </declare-styleable>
+
+    <declare-styleable name="EditorView">
+        <attr name="showInfoLabel" format="boolean" />
+        <attr name="showBackgroundMenu" format="boolean" />
+        <attr name="showStickersLayers" format="boolean" />
+        <attr name="showStickerBasic" format="boolean" />
+        <attr name="showStickerCustom" format="boolean" />
+        <attr name="showAddPhotoMenu" format="boolean" />
+        <attr name="showPhotoLayers" format="boolean" />
+        <attr name="bringToFrontCurrentPhoto" format="boolean" />
+    </declare-styleable>
+
+    <declare-styleable name="GifMoviewView">
+        <attr name="gif" format="reference" />
+        <attr name="paused" format="boolean" />
+    </declare-styleable>
+    <declare-styleable name="CustomTheme">
+        <attr name="gifMoviewViewStyle" format="reference" />
+    </declare-styleable>
+    <declare-styleable name="FontPickerView">
+        <attr name="fontDirectory" format="string" />
+        <attr name="displayText" format="string" />
+
+
+    </declare-styleable>
+    <declare-styleable name="ToggleSwitchOptions">
+        <attr name="toggleWidth" format="dimension" />
+
+        <attr name="textToggleCenter" format="string" localization="suggested" />
+        <attr name="textToggleLeft" format="string" localization="suggested" />
+        <attr name="textToggleRight" format="string" localization="suggested" />
+
+        <attr name="activeBgColor" format="color" />
+        <attr name="activeTextColor" format="color" />
+        <attr name="inactiveBgColor" format="color" />
+        <attr name="inactiveTextColor" format="color" />
+        <attr name="separatorColor" format="color" />
+
+        <!--        <attr name="cornerRadius"       format="dimension"/>-->
+
+        <attr name="android:textSize" />
+    </declare-styleable>
+
+    <declare-styleable name="statusview">
+        <attr name="complete" format="reference" />
+        <attr name="error" format="reference" />
+        <attr name="loading" format="reference" />
+        <attr name="dismissOnComplete" format="boolean" />
+    </declare-styleable>
+    <declare-styleable name="RangeSeekBarView">
+        <attr name="stepValue" format="integer|dimension" />
+        <attr name="minValue" format="integer|dimension" />
+        <attr name="maxValue" format="integer|dimension" />
+        <attr name="currentValue" format="integer|dimension" />
+        <attr name="seekBarHeight" format="dimension" />
+        <attr name="circleRadius" format="dimension" />
+        <attr name="circleTextSize" format="dimension" />
+        <attr name="circleTextColor" format="color" />
+        <attr name="baseColor" format="color" />
+        <attr name="fillColor" format="color" />
+    </declare-styleable>
+    <declare-styleable name="ColorPanelView">
+        <attr name="cpv_colorShape">
+            <enum name="circle" value="1" />
+            <enum name="square" value="0" />
+        </attr>
+        <attr name="cpv_showOldColor" format="boolean"></attr>
+        <attr name="cpv_borderColor" format="reference|color"></attr>
+    </declare-styleable>
+    <declare-styleable name="ColorPickerView">
+        <attr name="cpv_alphaChannelVisible" format="reference|boolean"></attr>
+        <attr name="cpv_alphaChannelText" format="reference|string"></attr>
+        <attr name="cpv_sliderColor" format="reference|color"></attr>
+        <attr name="cpv_borderColor" />
+    </declare-styleable>
+    <declare-styleable name="ColorPreference">
+        <attr name="cpv_showDialog" format="reference|boolean"></attr>
+        <attr name="cpv_dialogType">
+            <enum name="custom" value="0" />
+            <enum name="preset" value="1" />
+        </attr>
+        <attr name="cpv_allowPresets" format="reference|boolean"></attr>
+        <attr name="cpv_colorShape" />
+        <attr name="cpv_allowCustom" format="reference|boolean"></attr>
+        <attr name="cpv_showAlphaSlider" format="reference|boolean"></attr>
+        <attr name="cpv_showColorShades" format="reference|boolean"></attr>
+        <attr name="cpv_previewSize">
+            <enum name="large" value="1" />
+            <enum name="regular" value="0" />
+        </attr>
+        <attr name="cpv_colorPresets" format="reference"></attr>
+        <attr name="cpv_dialogTitle" format="reference"></attr>
+    </declare-styleable>
+    <declare-styleable name="SimpleColorPickerView">
+        <attr name="colorShape">
+            <enum name="circle" value="1" />
+            <enum name="square" value="0" />
+        </attr>
+    </declare-styleable>
+    <declare-styleable name="MenuItemView">
+        <attr name="menu_size">
+            <enum name="Mini" value="1" />
+            <enum name="Normal" value="0" />
+        </attr>
+        <attr name="menu_icon" format="integer"></attr>
+        <attr name="menu_text" format="string"></attr>
+    </declare-styleable>
+</resources>

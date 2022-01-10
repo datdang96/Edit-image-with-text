@@ -1,0 +1,6 @@
+<resources>
+    <string name="app_name">Edit Image With Text</string>
+    <string name="save_image">Image Saved Successfully</string>
+    <string name="save_image_fail">Failed to save Image</string>
+
+</resources>
