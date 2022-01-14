@@ -140,14 +140,11 @@ open class MainActivity : AppCompatActivity(), OnPhotoEditorListener {
     }
 
     private fun saveImage() {
-        val fileName = System.currentTimeMillis().toString() + ".png"
-        val hasStoragePermission = ContextCompat.checkSelfPermission(
-            this,
-            Manifest.permission.WRITE_EXTERNAL_STORAGE
-        ) == PackageManager.PERMISSION_GRANTED
+        val fileName = System.currentTimeMillis().toString()
+        val hasStoragePermission = ContextCompat.checkSelfPermission(this, Manifest.permission.WRITE_EXTERNAL_STORAGE) == PackageManager.PERMISSION_GRANTED
         if (hasStoragePermission || isSdkHigherThan28()) {
             mSaveFileHelper.createFile(fileName, object: FileSaveHelper.OnFileCreateResult{
-                override fun onFileCreateResult(created: Boolean, filePath: String?, error: String?, Uri: Uri?) {
+                override fun onFileCreateResult(created: Boolean, filePath: String?, error: String?, uri: Uri?) {
                     if (created) {
                         val saveSettings = SaveSettings.Builder()
                             .setClearViewsEnabled(true)
@@ -158,8 +155,10 @@ open class MainActivity : AppCompatActivity(), OnPhotoEditorListener {
                                     override fun onSuccess(imagePath: String) {
                                         mSaveFileHelper.notifyThatFileIsNowPubliclyAvailable(contentResolver)
                                         Toast.makeText(this@MainActivity, R.string.save_image, Toast.LENGTH_LONG).show()
-                                        mSaveImageUri = Uri!!
-                                        mPhotoEditorView.source.setImageURI(mSaveImageUri)
+                                        uri?.let{
+                                            mSaveImageUri = it
+                                            mPhotoEditorView.source.setImageURI(mSaveImageUri)
+                                        }
                                     }
                                     override fun onFailure(exception: Exception) {
                                         Toast.makeText(this@MainActivity, R.string.save_image_fail, Toast.LENGTH_LONG).show()

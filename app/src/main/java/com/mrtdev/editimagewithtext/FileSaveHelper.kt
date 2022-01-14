@@ -13,6 +13,8 @@ import java.io.IOException
 import java.lang.Exception
 import java.util.concurrent.ExecutorService
 import java.util.concurrent.Executors
+import android.os.Environment
+import java.io.File
 
 
 /**
@@ -73,9 +75,10 @@ class FileSaveHelper(private val mContentResolver: ContentResolver) : LifecycleO
             try {
                 val newImageDetails = ContentValues()
                 val imageCollection = buildUriCollection(newImageDetails)
-                val editedImageUri =
-                    getEditedImageUri(fileNameToSave, newImageDetails, imageCollection)
-                filePath = getFilePath(cursor, editedImageUri)
+                val editedImageUri = getEditedImageUri(fileNameToSave, newImageDetails, imageCollection)
+                val path: File = Environment.getExternalStoragePublicDirectory(Environment.DIRECTORY_PICTURES)
+//                filePath = getFilePath(editedImageUri)
+                filePath = "$path/$fileNameToSave.jpg"
                 updateResult(true, filePath, null, editedImageUri, newImageDetails)
             } catch (ex: Exception) {
                 ex.printStackTrace()
@@ -86,10 +89,9 @@ class FileSaveHelper(private val mContentResolver: ContentResolver) : LifecycleO
         }
     }
 
-    private fun getFilePath(cursor: Cursor?, editedImageUri: Uri?): String {
-        var cursor = cursor
+    private fun getFilePath(editedImageUri: Uri?): String {
         val proj = arrayOf(MediaStore.Images.Media.DATA)
-        cursor = mContentResolver.query(editedImageUri!!, proj, null, null, null)
+        val cursor = mContentResolver.query(editedImageUri!!, proj, null, null, null)
         val column_index = cursor!!.getColumnIndexOrThrow(MediaStore.Images.Media.DATA)
         cursor.moveToFirst()
         return cursor.getString(column_index)
@@ -100,7 +102,7 @@ class FileSaveHelper(private val mContentResolver: ContentResolver) : LifecycleO
         fileNameToSave: String,
         newImageDetails: ContentValues,
         imageCollection: Uri
-    ): Uri? {
+    ): Uri {
         newImageDetails.put(MediaStore.Images.Media.DISPLAY_NAME, fileNameToSave)
         val editedImageUri = mContentResolver.insert(imageCollection, newImageDetails)
         val outputStream = mContentResolver.openOutputStream(editedImageUri!!)
@@ -137,8 +139,10 @@ class FileSaveHelper(private val mContentResolver: ContentResolver) : LifecycleO
     }
 
     private class FileMeta(
-        var isCreated: Boolean, var filePath: String?,
-        var uri: Uri?, var error: String?,
+        var isCreated: Boolean,
+        var filePath: String?,
+        var uri: Uri?,
+        var error: String?,
         var imageDetails: ContentValues?
     )
 
